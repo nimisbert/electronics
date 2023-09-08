@@ -1,1 +1,3 @@
 *.raw
+*.cf
+*.DS_Store
