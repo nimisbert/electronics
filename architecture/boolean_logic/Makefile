@@ -3,7 +3,7 @@ HDL = ~/ghdl-macos-11-mcode/bin/ghdl
 # file_tb.vhd
 TESTBENCH_FILE_HEADER = _tb			
 # working directory is .	
-WORKDIR = ./							
+WORKDIR = ./					
 # phony clean 
 .PHONY: clean 						 	
 # *.vhd (hdl) files location
