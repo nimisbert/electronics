@@ -1,19 +1,26 @@
-# electronics
+# Electronics
 
-Electronics with, VHDL, LTspice and Kicad
+## Schematics 
+1. [Passive components](./passive/passive.md)
+2. [Diode](./diodes/diodes.md)
 
-## 1 - architecture 
+## LTspice Cheatsheet
+### commands
+> - wire : F3
+> - move : F7
 
-Computer architecture from boolean logic gates to ???.
+### model & subckt
+> Spice model :
+> - Intrinsic SPICE devices, like Diodes & Transistors
+> 
+> Spice subckt : 
+> - Collection of SPICE devices, like OPAMPS
+> 
+> Diodes are declared as SPICE models.
 
-## 2 - simulations
-
-Electrical simulations of various circuits designs.
-
-## sources 
-
-* R.Mecklenburg, _Managing Projects with GNU Make_, __O'REILLY__, 2004
-* N.Nisan & S.Shocken, _Building a modern computer from first principle_, __The MIT Press__, 2005
-* P.Horowitz & W.Hill, _The Art of Electronics_, __Cambridge University Press__, 2015
-* J.Sérot, _Les circuits FPGA et le langage VHDL_, __ellipses__, 2019
-* S. Dusausay, _L'Electronique par la simulation_, 2023
+### .lib & .inc
+> .inc : 
+> - Include everything in the file, even commands (.ac, .op)
+> 
+> .lib : 
+> - Include models & subckts, safer to use
