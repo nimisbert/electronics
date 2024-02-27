@@ -6,7 +6,7 @@
 
 ## Power dissipation in passive components <a name="power"></a>
 >- Power dissipation
->   - $ P = I \times V$
+>   - $P = I \times V$
 
 ## Resistors <a name="resistors"></a>
 >- resistance
@@ -17,6 +17,15 @@
 >   - $P_R = I^2R = \frac{U^2}{R}$
 
 ## Capacitors <a name="capacitors"></a>
+>- voltage & current
+>   - $u(t)=\frac{1}{C}\int{i(t)dt}$
+>   - $i(t)=C\frac{dv(t)}{dt}$
+>- stored charge
+>   - $U_C = \frac{1}{2}CV^2$
 
 ## Inductors <a name="inductors"></a>
-s
+>- voltage & current
+>   - $u(t)=L\frac{di}{dt}$
+>   - $i(t)=\frac{1}{L}\int{u(t)dt}$
+>- stored charge
+>   - $U_L = \frac{1}{2}LI^2$
