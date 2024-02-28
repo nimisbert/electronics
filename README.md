@@ -15,8 +15,7 @@
 > 
 > Spice subckt : 
 > - Collection of SPICE devices, like OPAMPS
-> 
-> Diodes are declared as SPICE models.
+
 
 ### .lib & .inc
 > .inc : 
