@@ -1,25 +1,10 @@
 # Electronics
+SPICE simulations
 
-## Schematics 
-1. [Passive components](./passive/passive.md)
-2. [Diode](./diodes/diodes.md)
+## Spice Memo
 
-## LTspice Cheatsheet
-### commands
-> - wire : F3
-> - move : F7
+> dc \<src\> \<start\> \<stop\> \<step\>
 
-### model & subckt
-> Spice model :
-> - Intrinsic SPICE devices, like Diodes & Transistors
-> 
-> Spice subckt : 
-> - Collection of SPICE devices, like OPAMPS
+> tran \<step\> \<stop\> [\<start\> [\<max\>]] [\<uic\>]
 
-
-### .lib & .inc
-> .inc : 
-> - Include everything in the file, even commands (.ac, .op)
-> 
-> .lib : 
-> - Include models & subckts, safer to use
+> ac \<dec|oct|lin\> \<npoints\> \<fstart\> \<fstop\>

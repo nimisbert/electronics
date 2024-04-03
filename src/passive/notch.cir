@@ -1,0 +1,22 @@
+1.7.14 - Resonant Circuits, Figure 1.108
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+vin in 0 pulse(0.0V 1.0V 2ms) ac 1.0 dc 0.0
+r1  in out 1.0k
+l1  out 3 1.0u
+c1  3 0 1.0u
+
+.control 
+delete all
+* tran <step> <stop> [<start> [<max>]] [uic]
+tran 0.1ms 10ms 0.0ms 0.2ms
+op
+* ac <dec|oct|lin> <npoints> <fstart> <fstop>
+ac dec 10 1.0Hz 10kHz
+plot db(v(out)/v(in)) phase(v(out)/v(in)) xlog
+.endc
+.end
