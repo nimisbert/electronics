@@ -18,4 +18,4 @@ delete all
 tran 0.1ms 10ms 0.0ms 0.2ms
 plot v(4) v(2)
 .endc
-.end 
+.end
