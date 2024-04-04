@@ -1,5 +1,6 @@
 SPICE   = ngspice
-SOURCE  = led_drive.cir 
+SOURCE  = led_drive.cir \
+	 	  switching_load_a.cir
 
 CIRCUIT = $(SOURCE:.cir=)
 
