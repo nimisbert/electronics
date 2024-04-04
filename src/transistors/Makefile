@@ -1,7 +1,7 @@
 SPICE   = MacSpice
 SOURCE  =
 
-CIRCUIT = $(SOURCES:*.cir=)
+CIRCUIT = $(SOURCE:.cir=)
 
 all: $(CIRCUIT)
 

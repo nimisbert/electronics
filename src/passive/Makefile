@@ -1,11 +1,12 @@
-SPICE   = MacSpice
+SPICE = ngspice
 
-SOURCE  = div.cir \
-		  highpass.cir \
-		  lowpass.cir \
-		  notch.cir
+SOURCE = div.cir 	  \
+		 highpass.cir \
+		 lowpass.cir  \
+		 bandpass.cir \
+		 notch.cir
 
-CIRCUIT = $(SOURCES:*.cir=)
+CIRCUIT = $(SOURCE:.cir=)
 
 all: $(CIRCUIT)
 
