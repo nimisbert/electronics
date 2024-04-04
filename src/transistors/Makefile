@@ -1,5 +1,5 @@
-SPICE   = MacSpice
-SOURCE  =
+SPICE   = ngspice
+SOURCE  = led_drive.cir 
 
 CIRCUIT = $(SOURCE:.cir=)
 
