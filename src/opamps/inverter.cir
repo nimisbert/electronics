@@ -1,0 +1,21 @@
+4.1.2 - Operational amplifiers, Figure 4.5
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+.include ./LF411.cir
+
+vpsupply p 0 dc 15
+vnsupply n 0 dc -15
+vin in 0 sin(0 3.3 10)
+r1  in a 1k
+r2  a out 1k
+x1  0 a p n out LF411/MC
+
+.control
+tran 10 0.1
+plot v(in) v(out)
+.endc
+.end
