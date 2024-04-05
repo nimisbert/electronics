@@ -1,9 +1,0 @@
-* Simple RC charge and discharge
-* R = 3.3k ; C = 10n
-* RC = 33u
-Ve 1 0 pulse (0 3 100u 1n 1n 200u 400u)
-R1 1 2 3.3k
-C1 2 0 10n
-.tran 10n 400u 0 10n
-.probe
-.end
