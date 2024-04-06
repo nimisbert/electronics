@@ -5,23 +5,22 @@
 *   Paul Horowitz
 *   Winfield Hill
 *
-.model LED D (BV=3.5 IBV=0.5 IS=100pA N=1.679)
-*.model QMOD NPN (level=4)
 
-vsupply in 0 0.0 ac 1 dc 0.0
-*vlogic  in  0 1.00 ac 1 dc 0.0 pulse(0.0 3.0 10ms 0.1ms 0.1ms 20ms 1ms)
-****** emitter follower ******
-*q2 1 in 2 QMOD IC=0.6
-*r3 2 0 10k
-*r4 2 3 100
-****** bright LED switch ******
-d1 in 1 LED
-r1 1 0 220
-*q3 5 3 0 QMOD IC=0.6
+.model LED D (BV=3.6 IBV=0.5 IS=100pA N=1.679)
+.model QMOD NPN (level=4)
+
+vin    supply 0 5.00 ac 1 dc 5.0
+vlogic in 0 1.00 ac 1 dc 3.3 pulse(0.0V 3.3V 2ms) 
+d1     supply 1 LED
+r2     1  4 220
+r4     2  3 100
+q3     4  3 0 QMOD IC=0.6
+q2     supply in 2 QMOD IC=0.6
+r3     2  0 10k
 
 .control 
 delete all
-dc vsupply -10.0 10.0 0.1
-plot i(in) vs v(in) 
+tran 200us 4ms 0ms 1ms
+plot v(supply) v(in) v(4)
 .endc
 .end

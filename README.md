@@ -22,13 +22,13 @@ SPICE simulations
 - [Schmitt Trigger](./src/transistors/schmitt_trigger.cir)
 - [Emitter Follower](./src/transistors/ef.cir)
 - [Emitter Follower driving switch](./src/transistors/efdrive.cir)
-- [Emitter Follower Voltage Regulator](./src/transistors/efreg.cir)
+- [Emitter Follower Voltage Regulator I](./src/transistors/efreg_1.cir)
+- [Emitter Follower Voltage Regulator II](./src/transistors/efreg_2.cir)
 
 ### OpAmps
 - [Voltage Inverter](./src/opamps/inverter.cir)
 
 ## Spice Memo
-
 - dc \<src\> \<start\> \<stop\> \<step\>
 - tran \<step\> \<stop\> [\<start\> [\<max\>]] [\<uic\>]
 - ac \<dec|oct|lin\> \<npoints\> \<fstart\> \<fstop\>

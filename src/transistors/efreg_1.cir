@@ -18,6 +18,6 @@ rload out 0 50k
 .control 
 delete all
 tran 200us 50ms 0ms 1ms
-plot v(base) v(out)
+plot v(out)+12.5 v(in)
 .endc
 .end

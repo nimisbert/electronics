@@ -1,18 +1,18 @@
-0 - Voltage Divider to test setup
+0 - Voltage Divier
 *
 * Author : Nicolas Misbert 
 * Source : 
 *
-vin 1 0 dc
+v1 1 0 sin(1 1 10) dc 0.0
 r1 1 2 1.0k
 r2 2 0 1.0k
 
 .control
 delete all
-* dc <src> <start> <stop> <step>
-dc vin 0.0V 5.0V 1.0V
-plot v(1) v(2)
+run
 op
+tran 0.1ms 0.1s 0.1ms 0.1ms
+plot v(1) v(2)
 destroy
 .endc
 .end
