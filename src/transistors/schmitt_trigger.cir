@@ -18,6 +18,6 @@ q5      out 2 4 QMOD IC=0.6
 
 .control 
 dc vlogic 0.0 3.3 +0.1
-plot v(in) v(out)
+plot v(out) vs v(in)
 .endc
 .end

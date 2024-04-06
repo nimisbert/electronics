@@ -2,7 +2,6 @@
 SPICE simulations
 
 ## Circuits
-
 ### Passive 
 - [Voltage Divider](./src/passive/div.cir)
 - [Lowpass Filter](./src/passive/lowpass.cir)
@@ -11,6 +10,7 @@ SPICE simulations
 - [Notch Trap](./src/passive/notch.cirp)
 
 ### Diodes
+- [Diode Model](./src/diodes/diode.cir)
 - [Zener Voltage Regulator](./src/diodes/zenreg.cir)
 
 ### Transistors
@@ -21,6 +21,7 @@ SPICE simulations
 - [Pulse Generator II](./src/transistors/pulse_gen_2.cir)
 - [Schmitt Trigger](./src/transistors/schmitt_trigger.cir)
 - [Emitter Follower](./src/transistors/ef.cir)
+- [Emitter Follower driving switch](./src/transistors/efdrive.cir)
 - [Emitter Follower Voltage Regulator](./src/transistors/efreg.cir)
 
 ### OpAmps
