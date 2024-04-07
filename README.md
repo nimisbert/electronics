@@ -26,7 +26,9 @@ SPICE simulations
 - [Emitter Follower Voltage Regulator II](./src/transistors/efreg_2.cir)
 
 ### OpAmps
-- [Voltage Inverter](./src/opamps/inverter.cir)
+- [Voltage Inverter Amplifier](./src/opamps/inverter.cir)
+- [Voltage Non-Inverter Amplifier](./src/opamps/noninverter.cir)
+- [Voltage AC Amplifier I](./src/opamps/acamp_1.cir)
 
 ## Spice Memo
 - dc \<src\> \<start\> \<stop\> \<step\>
