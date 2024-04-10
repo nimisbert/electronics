@@ -1,0 +1,19 @@
+4.2.3 - Follower, Figure 4.8.
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+.include ./LF411.cir
+
+vsp 1 0 dc +15.0
+vsn 2 0 dc -15.0
+vin in 0 dc 0.0 ac 1.0 
+x1 in out 1 2 out LF411/MC
+
+.control
+dc vin 0.0 3.3 0.1
+plot v(in) v(out) 
+.endc 
+.end 
