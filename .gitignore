@@ -1,3 +1,5 @@
 *.raw
 *.cf
 *.DS_Store
+*.hex
+*.elf
