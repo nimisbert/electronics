@@ -1,0 +1,26 @@
+4.2.2.A. - Non inverting amplifiers, Figure 4.7.A.
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+.include ./LF411.cir
+
+vpsupply p 0 dc 15
+vnsupply n 0 dc -15
+vin in 0 sin(0 3.3 20) ac 1.0 dc 0.0
+c1 in 1 0.1u
+r1 1 0 100k
+r2 out 2 18k
+r3 2 0 2k
+x1 1 2 p n out LF411/MC
+
+.control 
+tran 0.1ms 100ms 0.0ms 0.2ms
+plot v(in) v(out)
+ac dec 10 1.0Hz 10kHz
+plot db(v(out)) phase(v(out)) xlog
+destroy
+.endc
+.end

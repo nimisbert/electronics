@@ -1,0 +1,20 @@
+2.2.3 Emitter follower, Figure 2.14
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+.model QMOD NPN (level=1 IS=1.6e-16)
+
+vsupply 1 0 dc 10
+vin in 0 sin(1.5 1.5 20) dc 0.0
+r1  out 0 10k
+q1  1 in out QMOD IC=0.6
+
+.control 
+delete all
+tran 200us 200ms 0ms 1ms
+plot v(in) v(out) 0.6
+.endc
+.end

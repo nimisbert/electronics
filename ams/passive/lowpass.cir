@@ -1,0 +1,18 @@
+1.7.9 - Impedance and Reactance, Figure 1.102
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+vin in 0 pulse(0.0V 1.0V 2ms) ac 1.0 dc 0.0
+r1 in out 1.0k
+c1 out 0 0.5u
+
+.control
+delete all
+tran 0.1ms 10ms 0.0ms 0.2ms
+ac dec 10 1.0Hz 10kHz
+plot db(v(out)) phase(v(out)) xlog
+.endc
+.end

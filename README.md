@@ -1,7 +1,14 @@
 # Electronics
-SPICE simulations
+> Exploring the topic of electronics with different tools.
 
-## Circuits
+## Firmware
+> Microcontroller programming & emulation with qemu.
+
+## ESL
+> Electronic System Level simulation with GHDL & GTKwave.
+
+## AMS
+> Analog & Mixed Signals simulations with SPICE3 scripts.
 ### Passive 
 - [Voltage Divider](./src/passive/div.cir)
 - [Lowpass Filter](./src/passive/lowpass.cir)
@@ -30,7 +37,7 @@ SPICE simulations
 - [Voltage Non-Inverter Amplifier](./src/opamps/noninverter.cir)
 - [Voltage AC Amplifier I](./src/opamps/acamp_1.cir)
 
-## Spice Memo
+### Spice Memo
 - dc \<src\> \<start\> \<stop\> \<step\>
 - tran \<step\> \<stop\> [\<start\> [\<max\>]] [\<uic\>]
 - ac \<dec|oct|lin\> \<npoints\> \<fstart\> \<fstop\>

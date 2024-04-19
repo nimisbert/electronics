@@ -1,0 +1,27 @@
+0 - Testing Basic diode model
+
+.model DIODE1 D (
++ IS=18.8n   
++ BV=5.0
++ N=2.0 )
+
+.model DIODE2 D (
++ IS=76.9n 
++ BV=2.0 
++ M=0.333 
++ N=1.45 )
+
+vin in 0 1.0 dc 0.0
+d1  in 1 DIODE1
+r1  1 0 10
+d2  in 2 DIODE2
+r2  2 0 10
+
+.control 
+delete all
+dc vin -10.0 10.0 0.01
+let i1 = v(1)/10
+let i2 = v(2)/10
+plot i1 i2 vs v(in)
+.endc
+.end

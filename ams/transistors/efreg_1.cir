@@ -1,0 +1,23 @@
+2.2.4 - Emitter Followers as voltage regulators, Figure 2.21.
+* 
+* Author : Nicolas Misbert 
+* Source : Art Of Electronics, Third Edition
+*   Paul Horowitz
+*   Winfield Hill
+*
+.model ZEN D (BV=10.75 IBV=17m) 
+.model QMOD NPN (level=4)
+
+vin in 0 sin(22.5 2.5 20) dc 0.0
+rb in base 1k
+rc in 2 220
+d1 0 base ZEN
+q1 2 base out QMOD IC=0.6
+rload out 0 50k
+
+.control 
+delete all
+tran 200us 50ms 0ms 1ms
+plot v(out)+12.5 v(in)
+.endc
+.end
