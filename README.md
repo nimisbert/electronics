@@ -1,8 +1,12 @@
 # Electronics
-> Exploring the topic of electronics with different tools.
+> Exploring the topic of electronics simulation with different tools.
 
 ## Firmware
 > Microcontroller programming & emulation with qemu.
+### AVR
+- [test](./firmware/avr/test/) : test the setup
+- [hello](./firmware/avr/hello/) : hello world through UART0, redirected to stdout
+- [tmp105](./firmware/avr/tmp105/) : get information from an I2C temperature sensor
 
 ## ESL
 > Electronic System Level simulation with GHDL & GTKwave.
