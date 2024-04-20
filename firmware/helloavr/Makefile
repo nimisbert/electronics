@@ -1,8 +1,9 @@
 # Emulation/Hardware
-FREQ   = 1000000          # microcontroller internal frequency
+FREQ   = 1843200          # microcontroller internal frequency
 DEVICE = atmega328        # microcontroller
 BOARD  = uno              # electronic board to emulate
 QEMU   = qemu-system-avr  # QEMU emulator
+SERIAL = /dev/stdout      # UART Serial output
 # Compilation
 AVRCC  = avr-gcc          # avr gcc compiler
 AVRHC  = avr-objcopy      # avr copy and transform binary files
@@ -13,22 +14,24 @@ OBJ    = $(SRC:.c=.o)
 ELF    = $(OBJ:.o=.elf)
 HEX    = $(ELF:.elf=.hex)
 
-.PHONY: all emulate clean
-
-all: $(HEX)
-
-emulate: $(HEX)
-	$(QEMU) -machine $(BOARD) -bios $^ -nographic -serial tcp::5678,server=on,wait=off
-
-clean:
-	rm -f *.o *.elf *.hex
-
 %.o: %.c
 	$(AVRCC) -Os -mmcu=$(DEVICE) -DF_CPU=$(FREQ) $< -c
 
 %.elf: %.o
-	$(AVRCC) -Os -mmcu=$(DEVICE) -DF_CPU=$(FREQ) $< -o $@
+	$(AVRCC) -Os -mmcu=$(DEVICE) -DF_CPU=$(FREQ) $^ -o $@
 
 %.hex: %.elf
 	$(AVRHC) -O ihex $^ $@
 	$(AVRSC) --format=avr --mcu=$(DEVICE) $^
+
+main.elf: uart0.o
+
+.PHONY: all emulate clean
+
+all: $(HEX)
+
+emulate: $(ELF)
+	$(QEMU) -machine $(BOARD) -bios $^ -nographic -serial $(SERIAL)
+
+clean:
+	rm -f *.o *.elf *.hex
