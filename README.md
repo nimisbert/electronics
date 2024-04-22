@@ -1,12 +1,29 @@
 # Electronics
 > Exploring the topic of electronics simulation with different tools.
 
+## Linux 
+> Teeny linux builder with docker by Mitchel Humpherys.
+
+### Docker Memo 
+- Building : docker build . -t teeny-linux-builder
+- Running : docker run -ti -v <local>:<docker> teeny-linux-builder
+    - <local> : path to dir used as a docker volume (without ".." i.e. /Users/.../Workspace/kernel)
+    - <docker> : path to the directory in the docker (i.e. /teeny)
+
 ## Firmware
 > Microcontroller programming & emulation with qemu.
+
 ### AVR
-- [test](./firmware/avr/test/) : test the setup
-- [hello](./firmware/avr/hello/) : hello world through UART0, redirected to stdout
-- [tmp105](./firmware/avr/tmp105/) : get information from an I2C temperature sensor
+- [test](./firmware/test/) : Testing the cross-compiler+qemu setup with atmega328
+- [serial](./firmware/hello/) : Serial Output of UART0 to stdout with atmega328
+
+### STM32
+- [adc](./firmware/adc/) : Testing ADC conversion device with stm32
+
+### Requirement Memo
+- brew install qemu (ALL targets)
+- brew install avr-gcc (AVR targets)
+- brew install gcc-arm-embedded (STM targets)
 
 ## ESL
 > Electronic System Level simulation with GHDL & GTKwave.
