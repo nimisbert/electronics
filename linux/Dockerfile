@@ -15,4 +15,5 @@ RUN apt-get install -y \
     libncurses-dev \
     libssl-dev \
     gcc-x86-64-linux-gnu \
+    gcc-arm-linux-gnueabi \
     vim-tiny

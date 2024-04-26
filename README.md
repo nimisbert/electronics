@@ -4,11 +4,19 @@
 ## Linux 
 > Teeny linux builder with docker by Mitchel Humpherys.
 
-### Docker Memo 
+### Building Linux Kernel & Rootfs Memo (with docker)
 - Building : docker build . -t teeny-linux-builder
 - Running : docker run -ti -v <local>:<docker> teeny-linux-builder
     - <local> : path to dir used as a docker volume (without ".." i.e. /Users/.../Workspace/kernel)
     - <docker> : path to the directory in the docker (i.e. /teeny)
+- Exiting : exit
+- Can't mknod in a docker volume, the workaround is (in zsh)
+    - sudo mknod -m dev/mem c 1 1
+    - sudo mknod -m dev/tty2 c 4 2 
+    - sudo mknod -m dev/tty3 c 4 3 
+    - sudo mknod -m dev/tty4 c 4 4 
+- Create rootfs.cpio.gz, from rootfs dir
+    - find . -print0 | cpio --null -ov --format=newc | gzip -9 > ../rootfs.cpio.gz
 
 ## Firmware
 > Microcontroller programming & emulation with qemu.
@@ -16,9 +24,6 @@
 ### AVR
 - [test](./firmware/test/) : Testing the cross-compiler+qemu setup with atmega328
 - [serial](./firmware/hello/) : Serial Output of UART0 to stdout with atmega328
-
-### STM32
-- [adc](./firmware/adc/) : Testing ADC conversion device with stm32
 
 ### Requirement Memo
 - brew install qemu (ALL targets)
