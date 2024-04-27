@@ -4,3 +4,8 @@
 *.hex
 *.elf
 *.o
+
+**/qemu
+**/linux*
+**/busybox*
+**/rootfs
