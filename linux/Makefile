@@ -7,7 +7,18 @@ build_docker:
 run_docker:
 	docker run -ti -v $(TOOLS):/teeny $(DNAME)
 
-# Testing ARM :
+# Testing ARM : 
+KERNEL_ARM = ../../kernel/linux-5.11.7/arch/arm/boot/zImage
+INITRD_ARM = ../../kernel/rootfs.cpio.gz
+QFLAGS_ARM = -M virt \
+			 -kernel $(KERNEL_ARM) \
+			 -initrd $(INITRD_ARM) \
+			 -nographic \
+			 -append "root=/dev/mem"
+QEMU_ARM    = qemu-system-arm 
+
+run_arm:
+	$(QEMU_ARM) $(QFLAGS_ARM)
 
 # Testing x86_64 :
 KERNEL_X86_64 = ../../kernel/obj/linux-x86-basic/arch/x86_64/boot/bzImage
