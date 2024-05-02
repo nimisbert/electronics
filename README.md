@@ -78,6 +78,10 @@
 > - Exiting QEMU nographics 
 >     - Ctrl-A
 >     - X
+> - Finding standard libraries, example with libc
+>     - gcc --print-file-name=libc.a
+> - Finding info on files such as required shared libs
+>     - readelf -d \<file\>
 
 ## 3. ESL : Electronics System Level
 ### 3.1. Brief
