@@ -10,3 +10,4 @@
 **/busybox*
 **/rootfs
 *.gz
+**/pciutils
